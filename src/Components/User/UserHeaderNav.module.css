@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
+
 .nav a,
 .nav button {
   background: #eee;
@@ -16,6 +17,7 @@
   transition: 0.1s;
   cursor: pointer;
 }
+
 .nav a:hover,
 .nav a:focus,
 .nav button:hover,
@@ -25,14 +27,17 @@
   border-color: #333;
   outline: none;
 }
+
 .nav a.active {
   background: white;
   box-shadow: 0 0 0 3px #fea;
   border-color: #fb1;
 }
+
 .nav a.active svg > * {
   fill: #fb1;
 }
+
 .mobileButton {
   background: #eee;
   border-radius: 0.2rem;
@@ -45,8 +50,9 @@
   border: 1px solid transparent;
   transition: 0.1s;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: 1.25rem;
 }
+
 .mobileButton::after {
   content: '';
   display: block;
@@ -57,6 +63,7 @@
   box-shadow: 0 6px currentColor, 0 -6px currentColor;
   transition: 0.2s;
 }
+
 .mobileButton:focus,
 .mobileButton:hover,
 .mobileButtonActive {
@@ -66,12 +73,14 @@
   border-color: #fb1;
   color: #fb1;
 }
+
 .mobileButtonActive::after {
   transform: rotate(90deg);
   width: 4px;
   height: 4px;
   box-shadow: 0 8px currentColor, 0 -8px currentColor;
 }
+
 .navMobile {
   display: block;
   position: absolute;
@@ -84,7 +93,9 @@
   transform: translateX(-10px);
   opacity: 0;
   pointer-events: none;
+  height: 11.25rem;
 }
+
 .navMobileActive {
   transition: 0.3s;
   transform: initial;
@@ -104,13 +115,16 @@
   padding: 0.5rem 0;
   cursor: pointer;
 }
+
 .navMobile a:hover svg > *,
 .navMobile button:hover svg > * {
   fill: #fb1;
 }
+
 .navMobile button {
   border-bottom: none;
 }
+
 .navMobile svg {
-  margin-right: 00.5rem;
+  margin-right: 0.5rem;
 }
