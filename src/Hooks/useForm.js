@@ -7,9 +7,13 @@ const types = {
     message: 'Preencha um email válido',
   },
   password: {
-    regex: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
     message:
-      'Asenha deve ter mínimo de oito caracteres, pelo menos uma letra e um número.',
+      'A senha precisa ter 1 caracter maíusculo, 1 minúsculo e 1 digito. Com no mínimo 8 caracteres.',
+  },
+  number: {
+    regex: /^\d+$/,
+    message: 'Utilize números apenas.',
   },
 };
 
@@ -17,7 +21,7 @@ const useForm = (type) => {
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(null);
 
-  function validade(value) {
+  function validate(value) {
     if (type === false) return true;
     if (value.length === 0) {
       setError('Preencha um valor.');
@@ -32,7 +36,7 @@ const useForm = (type) => {
   }
 
   function onChange({ target }) {
-    if (error) validade(target.value);
+    if (error) validate(target.value);
     setValue(target.value);
   }
 
@@ -41,8 +45,8 @@ const useForm = (type) => {
     setValue,
     onChange,
     error,
-    validade: () => validade(value),
-    onBlur: () => validade(value),
+    validate: () => validate(value),
+    onBlur: () => validate(value),
   };
 };
 
