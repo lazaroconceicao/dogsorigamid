@@ -34,12 +34,12 @@
 @media (max-width: 64rem) {
   .photo {
     height: auto;
-    max-height: calc(100vh 4rem);
+    max-height: calc(100vh - 4rem);
     overflow-y: auto;
-    grid-template-columns: minmax(20rem 40rem);
+    grid-template-columns: minmax(20rem, 40rem);
   }
   .img {
-    grid: 1;
+    grid-row: 1;
   }
 }
 
@@ -51,16 +51,16 @@
   align-items: center;
 }
 
-.author a {
+.author a:hover {
   text-decoration: underline;
 }
 
-.visualizacoes {
+.visualizacoes::before {
   content: '';
   display: inline-block;
   width: 16px;
   height: 10px;
-  margin-right: 0px;
+  margin-right: 0.5rem;
   background: url('../../Assets/visualizacao-black.svg');
 }
 
@@ -76,7 +76,7 @@
   margin-right: 2rem;
 }
 
-.attributes::before {
+.attributes li::before {
   content: '';
   display: inline-block;
   height: 20px;

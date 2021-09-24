@@ -6,7 +6,7 @@ import Loading from '../Helper/Loading';
 import { PHOTO_GET } from '../../api/Api';
 import PhotoContent from '../Photo/PhotoContent';
 
-const FeedModal = ({ photo, setModal }) => {
+const FeedModal = ({ photo, setModalPhoto }) => {
   const { data, error, loading, request } = useFetch();
 
   React.useEffect(() => {
@@ -15,7 +15,7 @@ const FeedModal = ({ photo, setModal }) => {
   }, [photo, request]);
 
   function handleOutsideClick(event) {
-    if (event.target === event.currentTarget) setModal(null);
+    if (event.target === event.currentTarget) setModalPhoto(null);
   }
 
   return (
