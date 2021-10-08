@@ -14,26 +14,26 @@ const PhotoCommentsForm = ({ id, setComments }) => {
     const { url, options } = COMMENT_POST(id, { comment });
     const { response, json } = await request(url, options);
     if (response.ok) {
-      setComments('');
+      setComment('');
       setComments((comments) => [...comments, json]);
     }
   }
 
   return (
-    <from className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <textarea
-        ClassName={styles.textarea}
+        className={styles.textarea}
         id="comment"
         name="comment"
         placeholder="Comente..."
         value={comment}
         onChange={({ target }) => setComment(target.value)}
       />
-      <button ClassName={styles.button}>
+      <button className={styles.button}>
         <Enviar />
       </button>
       <Error error={error} />
-    </from>
+    </form>
   );
 };
 
