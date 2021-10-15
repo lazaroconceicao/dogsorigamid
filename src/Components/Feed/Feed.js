@@ -45,7 +45,7 @@ const Feed = ({ user }) => {
         />
       ))}
 
-      <FeedPhotos user={user} page="2" setModalPhoto={setModalPhoto} />
+      {/* <FeedPhotos user={user} page="2" setModalPhoto={setModalPhoto} /> */}
     </div>
   );
 };

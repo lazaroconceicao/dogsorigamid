@@ -15,7 +15,7 @@ const Photo = () => {
     request(url, options);
   }, [request, id]);
 
-  if (error) return <Error erro={error} />;
+  if (error) return <Error error={error} />;
   if (loading) return <Loading />;
   if (data)
     return (
