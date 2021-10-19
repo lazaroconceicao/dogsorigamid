@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Notfound = () => {
+const NotFound = () => {
   return (
     <div className="container mainContainer">
       <h1 className="title">Erro: 404</h1>
@@ -9,4 +9,4 @@ const Notfound = () => {
   );
 };
 
-export default Notfound;
+export default NotFound;

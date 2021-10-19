@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router';
 import { UserContext } from '../../UserContext';
 import Feed from '../Feed/Feed';
 import Head from '../Helper/Head';
-import Notfound from '../Notfound';
+import Notfound from '../NotFound';
 import UserHeader from './UserHeader';
 import UserPhotoPost from './UserPhotoPost';
 import UserStats from './UserStats';
