@@ -7,17 +7,19 @@ const UserStatsGraphs = ({ data }) => {
   const [total, setTotal] = React.useState(0);
 
   React.useEffect(() => {
-    const graphData = data.map((item) => {
-      return {
-        x: item.title,
-        y: Number(item.acessos),
-      };
-    });
-    setTotal(
-      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b),
-    );
-    setGraph(graphData);
-    console.log(data);
+    if (data.length) {
+      const graphData = data.map((item) => {
+        return {
+          x: item.title,
+          y: Number(item.acessos),
+        };
+      });
+
+      setTotal(
+        data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b),
+      );
+      setGraph(graphData);
+    }
   }, [data]);
 
   return (
@@ -27,13 +29,13 @@ const UserStatsGraphs = ({ data }) => {
       </div>
       <div className={styles.graphItem}>
         <VictoryPie
-          data={[{ graph }]}
+          data={graph}
           innerRadius={50}
           padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
           style={{
             data: {
               fillOpacity: 0.9,
-              stroke: '#ff',
+              stroke: '#fff',
               strokeWidth: 2,
             },
             labels: {
